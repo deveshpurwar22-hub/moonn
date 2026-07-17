@@ -4,7 +4,7 @@ import { MotionConfig } from 'framer-motion';
 import { siteConfig } from './config/siteConfig';
 
 import Navbar from './components/sections/Navbar';
-import Hero from './components/sections/Hero';
+import Hero from "./Hero";
 import TrustBar from './components/sections/TrustBar';
 import Services from './components/sections/Services';
 import About from './components/sections/About';
