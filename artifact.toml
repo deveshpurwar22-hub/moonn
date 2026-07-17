@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "DentalTemplate"
+version = "1.0.0"
+id = "artifacts/dental-template"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 23745
+
+[services.development]
+run = "pnpm --filter @workspace/dental-template run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/dental-template", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/dental-template/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "23745"
+BASE_PATH = "/"
